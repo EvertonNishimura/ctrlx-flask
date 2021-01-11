@@ -1,17 +1,6 @@
 {
   "version": "1.0.0",
   "id": "flask-snap",
-  "services": {
-    "proxyMapping": [
-      {
-        "name": "flask-snap",
-        "url": "/flask-snap/",
-        "binding": "http://${hostname}:8080/",
-        "restricted": [
-        ]        
-      }
-    ]
-  },
   "menus": {
     "sidebar": [
       {
