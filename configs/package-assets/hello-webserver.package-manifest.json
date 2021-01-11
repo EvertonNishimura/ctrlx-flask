@@ -1,0 +1,35 @@
+{
+  "version": "1.0.0",
+  "id": "flask-snap",
+  "services": {
+    "proxyMapping": [
+      {
+        "name": "flask-snap",
+        "url": "/flask-snap/",
+        "binding": "http://${hostname}:8080/",
+        "restricted": [
+        ]        
+      }
+    ]
+  },
+  "menus": {
+    "sidebar": [
+      {
+        "id": "flask-snap",
+        "title": "flask-snap",
+        "icon": "Bosch-Ic-worldwideweb",
+        "link": "http://${hostname}:8080/"
+      }
+    ],
+    "settings": [
+    ],
+    "overview": [
+      {
+        "id": "flask-snap",
+        "title": "flask-snap",
+        "icon": "Bosch-Ic-worldwideweb",
+        "link": "/flask-snap/"
+      }
+    ]    
+  }
+}

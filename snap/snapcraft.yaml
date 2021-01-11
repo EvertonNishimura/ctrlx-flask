@@ -1,0 +1,49 @@
+name: flask-snap 
+version: '0.11' 
+summary: Simple flask hello world on ctrlx 
+description: |
+  Simple flask hello world on ctrlx. Covid sucks. 
+
+grade: stable 
+confinement: strict 
+
+base: core18
+
+apps:
+  flask-snap: 
+    command: python3 -m main 
+    daemon: simple
+    restart-condition: always
+    plugs: [network-bind]
+    environment:
+      FLASK_APP: ./main.py
+      LC_ALL: C.UTF-8
+      LANG: C.UTF-8
+
+parts:
+  flask-app:
+    plugin: python
+    source: .
+    python-version: python3
+    requirements: requirements.txt
+
+  configs:
+    source: ./configs
+    plugin: dump
+    organize:
+      'package-assets/*': package-assets/${SNAPCRAFT_PROJECT_NAME}/   
+
+slots:
+  package-assets:
+    interface: content
+    content: package-assets
+    source:
+      read:
+      - $SNAP/package-assets/${SNAPCRAFT_PROJECT_NAME}
+
+
+plugs:
+  active-solution:
+    interface: content
+    content: solutions
+    target: $SNAP_COMMON/solutions
