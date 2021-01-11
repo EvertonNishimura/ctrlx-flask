@@ -17,7 +17,7 @@
         "id": "flask-snap",
         "title": "flask-snap",
         "icon": "Bosch-Ic-worldwideweb",
-        "link": "/flask-snap/"
+        "link": "http://${hostname}:8080/"
       }
     ]    
   }
